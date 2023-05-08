@@ -31,18 +31,19 @@ void fourpi_plots() {
     int n_high(2);
 
     const char * sample_names[12] = {"Fwd_CC0Pi0p","Fwd_CC0PiNp","Bwd_CC0Pi0p","Bwd_CC0PiNp","HAFwd_CC0Pi0p","HAFwd_CC0PiNp","HABwd_CC0Pi0p","HABwd_CC0PiNp","Fwd_CC1Pi","HAFwd_CC1Pi","Fwd_CCOther","CCPhoton"};
-    const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>8"    ,    "[5]>8"    ,   "[6]>8"   ,   "[7]>8"   ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
+    const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>8"    ,    "[5]>8"    ,   "[6]>8"     ,   "[7]>8"     ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
+	const int * topology_branch[12]={       0     ,      0      ,      0      ,      0      ,      0        ,      0        ,      0        ,      0        ,      1    ,      1      ,       2     ,    13    };
     const char * categories[2] = {"distribution", "effpurity"};
 	
 	TCanvas* canvas = new TCanvas("canvas", "canvas", 750*n_wide*win_scale, 500*n_high*win_scale);
 	canvas->Print("Plots.pdf[");
 	
-	plotMomCos(exp, p6, accum_levels, sample_names, categories);
+	plotMomCos(exp, p6, accum_levels, sample_names, categories, topology_branch);
 	
 	canvas->Print("Plots.pdf]");
 }
 
-void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], const char * sample_names[], const char * categories[]) {
+void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], const char * sample_names[], const char * categories[], const int * topology_branch[]) {
 	
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root",4);
 	const char * variables[2] = {"mom","costheta"};
@@ -83,11 +84,11 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		//draw->SetTitleX("True p_{#mu} [MeV/c]");
 		draw->SetTitleX(Form("True p_{#mu} [MeV/c] %s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->DrawEff(p6,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),"topology_ccphoton==13","","OVER","P6 Eff");
-		draw->DrawPur(p6,"truelepton_mom",50,0,5000,"topology_ccphoton==13",Form("accum_level[0]%s",accum_levels[k]),"same","OVER","P6 Pur");
+		draw->DrawEff(p6,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","OVER","P6 Eff");
+		draw->DrawPur(p6,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER","P6 Pur");
 		
-		draw->DrawEff(exp,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),"topology_ccphoton==13","same","OVER","P7 Eff");
-		draw->DrawPur(exp,"truelepton_mom",50,0,5000,"topology_ccphoton==13",Form("accum_level[0]%s",accum_levels[k]),"same","OVER","P7 Pur");
+		draw->DrawEff(exp,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","OVER","P7 Eff");
+		draw->DrawPur(exp,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER","P7 Pur");
 		}	
 		
 	else if(i==1){ //cos(theta)
@@ -96,11 +97,11 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitleY("Efficiency & Purity");
 		draw->SetTitleX(Form("True cos#theta_{#mu} %s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->DrawEff(p6,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),"topology_ccphoton==13","","UNDER","P6 Eff");
-		draw->DrawPur(p6,"truelepton_costheta",50, -1, 1,"topology_ccphoton==13",Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
+		draw->DrawEff(p6,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","UNDER","P6 Eff");
+		draw->DrawPur(p6,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
 		
-		draw->DrawEff(exp,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),"topology_ccphoton==13","same","UNDER","P7 Eff");
-		draw->DrawPur(exp,"truelepton_costheta",50, -1, 1,"topology_ccphoton==13",Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
+		draw->DrawEff(exp,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","UNDER","P7 Eff");
+		draw->DrawPur(exp,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
 		}
 	}
 		//canvas->SaveAs(Form("Plots/%s_%s_%s_%s.pdf",FGDs[f-1],sample_names[k],variables[i],categories[j]));
