@@ -1,14 +1,14 @@
 #include <string>
 #include <vector>
-
+​
 void fourpi_plots() {
 	
     gROOT->SetBatch(); //Stops it from spamming windows when drawing
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root",4); //Initialises DrawingTools with a random .root file
-
+​
 	// Create an experiment with name "nd280"
     Experiment exp("nd280");
-
+​
 	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_default_settings.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
@@ -25,11 +25,11 @@ void fourpi_plots() {
 	SampleGroup run4a_p6("run4a_p6");
 	run4a_p6.AddMCSample("magnet", P6_4a);
 	p6.AddSampleGroup("run4a_p6", run4a_p6);
-
+​
     float win_scale = 0.75;
     int n_wide(2);
     int n_high(2);
-
+​
     const char * sample_names[12] = {"Fwd_CC0Pi0p","Fwd_CC0PiNp","Bwd_CC0Pi0p","Bwd_CC0PiNp","HAFwd_CC0Pi0p","HAFwd_CC0PiNp","HABwd_CC0Pi0p","HABwd_CC0PiNp","Fwd_CC1Pi","HAFwd_CC1Pi","Fwd_CCOther","CCPhoton"};
     const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>8"    ,    "[5]>8"    ,   "[6]>8"   ,   "[7]>8"   ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
     const char * categories[2] = {"distribution", "effpurity"};
@@ -41,7 +41,7 @@ void fourpi_plots() {
 	
 	canvas->Print("Plots.pdf]");
 }
-
+​
 void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], const char * sample_names[], const char * categories[]) {
 	
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root",4);
@@ -108,6 +108,5 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 			}
 		}
 	}
-	
 }
-
+​
