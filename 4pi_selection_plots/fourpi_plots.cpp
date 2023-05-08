@@ -65,7 +65,8 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
 		}
 	if(i==1){ //cos(theta)
-		draw->SetLegendPos("tl");
+		if(k==2||k==3||k==6||k==7){draw->SetLegendPos("tr");}
+		else {draw->SetLegendPos("tl");}
 		draw->SetTitleX(Form("Reconstructed cos#theta_{#mu} %s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		draw->SetTitleY("Events");
 		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
@@ -79,16 +80,36 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 	exp.SetCurrentTree("truth"); //Sets the tree for true values to be used
 	p6.SetCurrentTree("truth");
 	if(i==0){ //Momentum
-		draw->SetLegendPos("tl");
+		//draw->SetLegendPos("tl");
+		if(k>7){auto legend = new TLegend(0.6,0.7,0.9,0.9);}
+		else {auto legend = new TLegend(0.6,0.2,0.9,0.4);}
 		draw->SetTitleY("Efficiency & Purity");
 		//draw->SetTitleX("True p_{#mu} [MeV/c]");
 		draw->SetTitleX(Form("True p_{#mu} [MeV/c] %s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->DrawEff(p6,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","OVER","P6 Eff");
-		draw->DrawPur(p6,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER","P6 Pur");
+		draw->DrawEff(p6,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","OVER NOLEG","P6 Eff");
+		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
+		legend -> AddEntry(graph1,"P6 Eff","ep");
+		graph1 -> SetLineColor(kBlack);
+		graph1 -> SetMarkerColor(kBlack);
+		draw->DrawEff(exp,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","OVER NOLEG","P7 Eff");
+		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
+		legend -> AddEntry(graph1,"P7 Eff","ep");
+		graph1 -> SetLineColor(kRed);
+		graph1 -> SetMarkerColor(kRed);
 		
-		draw->DrawEff(exp,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","OVER","P7 Eff");
-		draw->DrawPur(exp,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER","P7 Pur");
+		draw->DrawPur(p6,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER NOLEG","P6 Pur");
+		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
+		legend -> AddEntry(graph1,"P6 Pur","ep");
+		graph1 -> SetLineColor(kGreen);
+		graph1 -> SetMarkerColor(kGreen);
+		draw->DrawPur(exp,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER NOLEG","P7 Pur");
+		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
+		legend -> AddEntry(graph1,"P7 Pur","ep");
+		graph1 -> SetLineColor(kBlue);
+		graph1 -> SetMarkerColor(kBlue);
+		
+		legend -> Draw("same");
 		}	
 		
 	else if(i==1){ //cos(theta)
@@ -98,9 +119,9 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitleX(Form("True cos#theta_{#mu} %s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
 		draw->DrawEff(p6,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","UNDER","P6 Eff");
-		draw->DrawPur(p6,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
-		
 		draw->DrawEff(exp,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","UNDER","P7 Eff");
+		
+		draw->DrawPur(p6,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P6 Pur");		
 		draw->DrawPur(exp,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
 		}
 	}
