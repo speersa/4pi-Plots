@@ -1,6 +1,6 @@
 # Prepare JDL file
 JDL_FILE="CC4Pi.jdl" #Name of produced .jdl file
-EXECUTABLE="/home/t2k/aspeers/BANFF_and_Highland/exec_4pianalysis_files_batch.sh"
+EXECUTABLE="/home/t2k/aspeers/4pi_selection/exec_4pianalysis_files_batch.sh"
 #DATA_DIRECTORY="/data/aspeers/4pi_Selection/mcp/P6AA/P6AA_FHC_flattrees"
 DATA_DIRECTORY="/data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc"
 OUTFILE_DIR="/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0"
@@ -18,7 +18,7 @@ getenv = True
 executable = ${EXECUTABLE}
 output = /home/t2k/aspeers/condor_err/std-\$(CLUSTER).\$(Process).out
 error = /home/t2k/aspeers/condor_err/std-\$(CLUSTER).\$(Process).err
-log = condor_err/std-\$(CLUSTER).\$(Process).log
+log = /home/t2k/aspeers/condor_err/std-\$(CLUSTER).\$(Process).log
 concurrency_limits = aspeers:10
 requirements = OPSYSMAJORVER == 7
 

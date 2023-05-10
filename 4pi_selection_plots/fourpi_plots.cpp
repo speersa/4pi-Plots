@@ -9,7 +9,7 @@ void fourpi_plots() {
 	// Create an experiment with name "nd280"
     Experiment exp("nd280");
 
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_default_settings.root");
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
 	//exp.AddSampleGroup("p_7", p_7);
@@ -31,7 +31,7 @@ void fourpi_plots() {
     int n_high(2);
 
     const char * sample_names[12] = {"Fwd_CC0Pi0p","Fwd_CC0PiNp","Bwd_CC0Pi0p","Bwd_CC0PiNp","HAFwd_CC0Pi0p","HAFwd_CC0PiNp","HABwd_CC0Pi0p","HABwd_CC0PiNp","Fwd_CC1Pi","HAFwd_CC1Pi","Fwd_CCOther","CCPhoton"};
-    const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>8"    ,    "[5]>8"    ,   "[6]>8"     ,   "[7]>8"     ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
+    const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>6"    ,    "[5]>6"    ,   "[6]>8"     ,   "[7]>8"     ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
 	const int * topology_branch[12]={       0     ,      0      ,      0      ,      0      ,      0        ,      0        ,      0        ,      0        ,      1    ,      1      ,       2     ,    13    };
     const char * categories[2] = {"distribution", "effpurity"};
 	

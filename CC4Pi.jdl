@@ -1,0 +1,398 @@
+
+notify_user = a.speers@lancaster.ac.uk
+notification = Never
+getenv = True
+executable = /home/t2k/aspeers/4pi_selection/exec_4pianalysis_files_batch.sh
+output = /home/t2k/aspeers/condor_err/std-$(CLUSTER).$(Process).out
+error = /home/t2k/aspeers/condor_err/std-$(CLUSTER).$(Process).err
+log = /home/t2k/aspeers/condor_err/std-$(CLUSTER).$(Process).log
+concurrency_limits = aspeers:10
+requirements = OPSYSMAJORVER == 7
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400000-0000_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400000-0000_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400001-0000_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400001-0000_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400002-0000_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400002-0000_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400003-0000_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400003-0000_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400004-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400004-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400005-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400005-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400006-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400006-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400007-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400007-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400008-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400008-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400009-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400009-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400010-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400010-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400011-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400011-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400012-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400012-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400013-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400013-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400014-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400014-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400015-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400015-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400016-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400016-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400017-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400017-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400018-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400018-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400019-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400019-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400020-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400020-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400021-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400021-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400022-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400022-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400023-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400023-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400024-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400024-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400025-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400025-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400026-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400026-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400027-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400027-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400028-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400028-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400029-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400029-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400030-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400030-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400031-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400031-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400032-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400032-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400033-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400033-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400034-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400034-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400035-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400035-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400036-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400036-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400037-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400037-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400038-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400038-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400039-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400039-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400040-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400040-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400041-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400041-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400042-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400042-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400043-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400043-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400044-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400044-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400045-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400045-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400046-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400046-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400047-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400047-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400048-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400048-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400049-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400049-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400050-0002_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400050-0002_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400051-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400051-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400052-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400052-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400053-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400053-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400054-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400054-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400055-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400055-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400056-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400056-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400057-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400057-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400058-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400058-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400059-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400059-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400060-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400060-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400061-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400061-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400062-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400062-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400063-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400063-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400064-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400064-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400065-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400065-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400066-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400066-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400067-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400067-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400068-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400068-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400069-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400069-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400070-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400070-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400071-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400071-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400072-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400072-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400073-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400073-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400074-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400074-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400075-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400075-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400076-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400076-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400077-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400077-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400078-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400078-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400079-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400079-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400080-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400080-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400081-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400081-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400082-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400082-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400083-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400083-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400084-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400084-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400085-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400085-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400086-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400086-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400087-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400087-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400088-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400088-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400089-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400089-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400090-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400090-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400091-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400091-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400092-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400092-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400093-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400093-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400094-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400094-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400095-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400095-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400096-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400096-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400097-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400097-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400098-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400098-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400099-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400099-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400100-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400100-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400101-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400101-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400102-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400102-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400103-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400103-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400104-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400104-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400105-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400105-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400106-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400106-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400107-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400107-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400108-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400108-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400109-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400109-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400110-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400110-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400111-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400111-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400112-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400112-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400113-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400113-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400114-0003_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400114-0003_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400115-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400115-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400116-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400116-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400117-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400117-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400118-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400118-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400119-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400119-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400120-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400120-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400121-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400121-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400122-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400122-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400123-0004_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400123-0004_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400124-0005_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400124-0005_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400125-0005_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400125-0005_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400126-0005_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400126-0005_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400127-0005_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400127-0005_FROM_nt__to_.root_4pi.root
+Queue
+
+Arguments =  /data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc/P7_highland2Master_2.87_v1_MC_90400128-0005_FROM_nt__to_.root /data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0/P7_highland2Master_2.87_v1_MC_90400128-0005_FROM_nt__to_.root_4pi.root
+Queue
+
