@@ -5,11 +5,12 @@ void fourpi_plots() {
 	
     gROOT->SetBatch(); //Stops it from spamming windows when drawing
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root",4); //Initialises DrawingTools with a random .root file
+	draw->SetStackFillStyle(3254);
 
 	// Create an experiment with name "nd280"
     Experiment exp("nd280");
 
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0.root");
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_default_settings.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
 	//exp.AddSampleGroup("p_7", p_7);

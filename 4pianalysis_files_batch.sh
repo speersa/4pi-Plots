@@ -2,8 +2,8 @@
 JDL_FILE="CC4Pi.jdl" #Name of produced .jdl file
 EXECUTABLE="/home/t2k/aspeers/4pi_selection/exec_4pianalysis_files_batch.sh"
 #DATA_DIRECTORY="/data/aspeers/4pi_Selection/mcp/P6AA/P6AA_FHC_flattrees"
-DATA_DIRECTORY="/data/menailj/highland/flattrees_7_V12_NC/NCscripts/run4_air_p7_mcp_fhc"
-OUTFILE_DIR="/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_NHitsGT4_MipEmGT0"
+DATA_DIRECTORY="/data/aspeers/4pi_Selection/mcp/P7_V12_length_fix/length_fix_flattrees"
+OUTFILE_DIR="/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_default_settings"
 
 # Write JDL file header
 #notification=Never #Lots of jobs => lots of emails. Keep it like this for less spam

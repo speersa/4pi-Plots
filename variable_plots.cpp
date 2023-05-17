@@ -9,8 +9,8 @@ void variable_plots(){
 	
 	Experiment exp("nd280");
 
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
-	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_default_settings.root");
+	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_FGD1_default_settings.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
 	//exp.AddSampleGroup("p_7", p_7);
