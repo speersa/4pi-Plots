@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 
-void fourpi_plots() {
+void fgd2_fourpi_plots() {
 	
     gROOT->SetBatch(); //Stops it from spamming windows when drawing
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root"); //Initialises DrawingTools with a random .root file
@@ -48,9 +48,9 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 	
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root");
 	const char * variables[2] = {"mom","costheta"};
-	const char * FGDs[1] = {"FGD1"};
+	const char * FGDs[2] = {"FGD1", "FGD2"};
 	
-	int f = 1; //FGD Number (keep at 1)
+	int f = 2; //FGD Number (keep at 2)
 	
 	for(int j = 0; j<2; j++){ // loop over distribution and efficiency&purity
 		for(int i = 0; i<2; i++){ // loop over mom,cos
@@ -64,7 +64,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitle("TEST");
 		//draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
+		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"fgd2topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
 		}
 	if(i==1){ //cos(theta)
 		if(k==2||k==3||k==6||k==7){draw->SetLegendPos("tr");}
@@ -74,7 +74,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitleY("Events");
 		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->Draw(exp,"all","magnet","selmu_costheta",50, -1, 1,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","UNDER NOAUTOLABELS");
+		draw->Draw(exp,"all","magnet","selmu_costheta",50, -1, 1,"fgd2topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","UNDER NOAUTOLABELS");
 		}
 		draw->ChangeLegendEntry(0, "P6AA","");
 	}
@@ -90,23 +90,23 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		//draw->SetTitleX(Form("True p_{#mu} [MeV/c] %s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->DrawEff(p6,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","OVER NOLEG","P6 Eff");
+		draw->DrawEff(p6,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("fgd2topology_ccphoton==%d", topology_branch[k]),"","OVER NOLEG","P6 Eff");
 		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
 		legend -> AddEntry(graph1,"P6 Eff","ep");
 		graph1 -> SetLineColor(kBlack);
 		graph1 -> SetMarkerColor(kBlack);
-		draw->DrawEff(exp,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","OVER NOLEG","P7 Eff");
+		draw->DrawEff(exp,false,"truelepton_mom",50,0,5000,Form("accum_level[0]%s",accum_levels[k]),Form("fgd2topology_ccphoton==%d", topology_branch[k]),"same","OVER NOLEG","P7 Eff");
 		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
 		legend -> AddEntry(graph1,"P7 Eff","ep");
 		graph1 -> SetLineColor(kRed);
 		graph1 -> SetMarkerColor(kRed);
 		
-		draw->DrawPur(p6,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER NOLEG","P6 Pur");
+		draw->DrawPur(p6,"truelepton_mom",50,0,5000,Form("fgd2topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER NOLEG","P6 Pur");
 		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
 		legend -> AddEntry(graph1,"P6 Pur","ep");
 		graph1 -> SetLineColor(kGreen);
 		graph1 -> SetMarkerColor(kGreen);
-		draw->DrawPur(exp,"truelepton_mom",50,0,5000,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER NOLEG","P7 Pur");
+		draw->DrawPur(exp,"truelepton_mom",50,0,5000,Form("fgd2topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","OVER NOLEG","P7 Pur");
 		graph1 = (TGraphAsymmErrors*)draw->GetLastGraph();
 		legend -> AddEntry(graph1,"P7 Pur","ep");
 		graph1 -> SetLineColor(kBlue);
@@ -122,14 +122,14 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitleY("Efficiency & Purity");
 		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->DrawEff(p6,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"","UNDER","P6 Eff");
-		draw->DrawEff(exp,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("topology_ccphoton==%d", topology_branch[k]),"same","UNDER","P7 Eff");
+		draw->DrawEff(p6,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("fgd2topology_ccphoton==%d", topology_branch[k]),"","UNDER","P6 Eff");
+		draw->DrawEff(exp,false,"truelepton_costheta",50, -1, 1,Form("accum_level[0]%s",accum_levels[k]),Form("fgd2topology_ccphoton==%d", topology_branch[k]),"same","UNDER","P7 Eff");
 		
-		draw->DrawPur(p6,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P6 Pur");		
-		draw->DrawPur(exp,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
+		draw->DrawPur(p6,"truelepton_costheta",50, -1, 1,Form("fgd2topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P6 Pur");		
+		draw->DrawPur(exp,"truelepton_costheta",50, -1, 1,Form("fgd2topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
 		}
 	}
-		canvas->SaveAs(Form("%s %s %s %s.png",FGDs[f-1],sample_names[k],variables[i],categories[j]));
+		canvas->SaveAs(Form("%s_%s_%s_%s.png",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		canvas->Print("Plots.pdf");
 			}
 		}
