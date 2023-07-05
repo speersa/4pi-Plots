@@ -1,9 +1,9 @@
 #include <string>
 #include <vector>
 
-void fourpi_plots_entries() {
+void efficiencies() {
 	
-    //gROOT->SetBatch(); //Stops it from spamming windows when drawing
+    gROOT->SetBatch(); //Stops it from spamming windows when drawing
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root"); //Initialises DrawingTools with a random .root file
 	//draw->SetStackFillStyle(3254);
 
@@ -42,7 +42,7 @@ void fourpi_plots_entries() {
 	
 	plotMomCos(exp, p6, accum_levels, sample_names, categories, topology_branch);
 	
-	
+	canvas->SaveAs("efftest.png");
 	
 	//canvas->Print("Plots.pdf]");
 }
@@ -52,12 +52,13 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root");
 	const char * variables[2] = {"mom","costheta"};
 	const char * FGDs[1] = {"FGD1"};
+	exp.SetCurrentTree("truth"); //Sets the tree for true values to be used
 	
 	int f = 1; //FGD Number (keep at 1)
 	
 	for(int j = 0; j<1; j++){ // loop over distribution and efficiency&purity
 		for(int i = 0; i<1; i++){ // loop over mom,cos
-			for(int k = 0; k<12; k++){ // loop over samples
+			for(int k = 0; k<1; k++){ // loop over samples
 	
 	if(j==0){ //Distributions
 	if(i==0){ //Momentum
@@ -67,7 +68,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitle("TEST");
 		//draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
+		draw->Draw(exp,"all","magnet","truelepton_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
 		}
 
 		draw->ChangeLegendEntry(0, "P6AA","");

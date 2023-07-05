@@ -10,7 +10,8 @@ void fourpi_plots() {
 	// Create an experiment with name "nd280"
     Experiment exp("nd280");
 
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_default_settings.root");
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_FGD1_MipEMGT0.root");
+	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
 	//exp.AddSampleGroup("p_7", p_7);
@@ -61,10 +62,11 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetLegendPos("tr");
 		draw->SetTitleX("Reconstructed p_{#mu}");
 		draw->SetTitleY("Events");
-		draw->SetTitle("TEST");
-		//draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
+		//draw->SetTitle("TEST");
+		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
 		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
+		
 		}
 	if(i==1){ //cos(theta)
 		if(k==2||k==3||k==6||k==7){draw->SetLegendPos("tr");}
@@ -77,6 +79,32 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->Draw(exp,"all","magnet","selmu_costheta",50, -1, 1,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","UNDER NOAUTOLABELS");
 		}
 		draw->ChangeLegendEntry(0, "P6AA","");
+		
+		histo1 = (TH1D*)draw->GetLastHisto();
+		cout << Form("%s_%s_%s_%s Integral: ",FGDs[f-1],sample_names[k],variables[i],categories[j]) << histo1->Integral();
+		/*
+			HistoStack* stack = NULL;
+		stack = (HistoStack*)draw->GetLastStack();
+
+		stack->Draw();
+		
+		TH1* CC0pi = stack->GetHisto1D(0);
+		TH1* CC1pi = stack->GetHisto1D(1);
+		TH1* CCOther = stack->GetHisto1D(2);
+		TH1* CCPhoton = stack->GetHisto1D(3);
+		TH1* BKG = stack->GetHisto1D(4);
+		TH1* outFV = stack->GetHisto1D(5);
+		
+		double TotalIntegral = CC0pi->Integral(0, 27) + CC1pi->Integral(0, 27) + CCOther->Integral(0, 27) + CCPhoton->Integral(0, 27) + BKG->Integral(0, 27) + outFV->Integral(0, 27);
+		
+		cout << "Total Integral: " << TotalIntegral << std::endl
+			<< "CC0pi Integral: " << CC0pi->Integral(0, 27) << ", " << 100*CC0pi->Integral(0, 27)/TotalIntegral << "%"  << std::endl
+			<< "CC1pi Integral: " << CC1pi->Integral(0,27) << ", " << 100*CC1pi->Integral(0, 27)/TotalIntegral << "%" << std::endl
+			<< "CCOther Integral: " << CCOther->Integral(0,27) << ", " << 100*CCOther->Integral(0, 27)/TotalIntegral << "%" << std::endl
+			<< "CCPhoton Integral: " << CCPhoton->Integral(0,27) << ", " << 100*CCPhoton->Integral(0, 27)/TotalIntegral << "%" << std::endl
+			<< "BKG Integral: " << BKG->Integral(0,27) << ", " << 100*BKG->Integral(0, 27)/TotalIntegral << "%" << std::endl
+			<< "outFV Integral: " << outFV->Integral(0,27) << ", " << 100*outFV->Integral(0, 27)/TotalIntegral << "%" << std::endl;
+		*/
 	}
 	
 	else if(j==1){ //Efficiency and Purity
@@ -129,6 +157,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->DrawPur(exp,"truelepton_costheta",50, -1, 1,Form("topology_ccphoton==%d", topology_branch[k]),Form("accum_level[0]%s",accum_levels[k]),"same","UNDER","P7 Pur");
 		}
 	}
+	
 		canvas->SaveAs(Form("%s %s %s %s.png",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		canvas->Print("Plots.pdf");
 			}
