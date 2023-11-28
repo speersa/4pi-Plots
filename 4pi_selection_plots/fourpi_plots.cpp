@@ -10,20 +10,20 @@ void fourpi_plots() {
 	// Create an experiment with name "nd280"
     Experiment exp("nd280");
 
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_FGD1_MipEMGT0.root");
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_HL3.11_FHC.root");
 	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
 	//exp.AddSampleGroup("p_7", p_7);
 	
-	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings_OFFICIAL.root");
     p_7.AddDataSample(prod_6);
     exp.AddSampleGroup("p_7", p_7); 
 	
 	//Create a seperate experiment for eff&pur for P6
 	Experiment p6("nd280_p6");
   
-	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings_OFFICIAL.root");
 	SampleGroup run4a_p6("run4a_p6");
 	run4a_p6.AddMCSample("magnet", P6_4a);
 	p6.AddSampleGroup("run4a_p6", run4a_p6);

@@ -3,10 +3,10 @@
 	
 void SampleTopologyContributions() {
 	gROOT->SetBatch();
-	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root",4);
+	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root");
 
-	//DataSample mc("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_FGD1_MipEMGT0.root");
-	DataSample mc("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+	//DataSample mc("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_length_fix_FGD2_MipEMGT0.root");
+	DataSample mc("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD2_default_settings_OFFICIAL.root");
 	
 	cout << std::endl <<  "CC0pi0p Fwd" << std::endl;
 	draw->PrintPurities(mc, "topology_ccphoton", "accum_level[0][0]>8");
