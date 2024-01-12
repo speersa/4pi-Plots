@@ -1,53 +1,9 @@
 #include <string>
 #include <vector>
 
-void fourpi_plots() {
+void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], const char * sample_names[], const char * categories[], const int topology_branch[], TCanvas* canvas) {
 	
-    gROOT->SetBatch(); //Stops it from spamming windows when drawing
-	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root"); //Initialises DrawingTools with a random .root file
-	//draw->SetStackFillStyle(3254);
-
-	// Create an experiment with name "nd280"
-    Experiment exp("nd280");
-
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_HL3.11_FHC.root");
-	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
-    SampleGroup p_7("p_7");
-    p_7.AddMCSample("magnet", prod_7);
-	//exp.AddSampleGroup("p_7", p_7);
-	
-	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings_OFFICIAL.root");
-    p_7.AddDataSample(prod_6);
-    exp.AddSampleGroup("p_7", p_7); 
-	
-	//Create a seperate experiment for eff&pur for P6
-	Experiment p6("nd280_p6");
-  
-	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings_OFFICIAL.root");
-	SampleGroup run4a_p6("run4a_p6");
-	run4a_p6.AddMCSample("magnet", P6_4a);
-	p6.AddSampleGroup("run4a_p6", run4a_p6);
-
-    float win_scale = 0.75;
-    int n_wide(2);
-    int n_high(2);
-
-    const char * sample_names[12] = {"Fwd_CC0Pi0p","Fwd_CC0PiNp","Bwd_CC0Pi0p","Bwd_CC0PiNp","HAFwd_CC0Pi0p","HAFwd_CC0PiNp","HABwd_CC0Pi0p","HABwd_CC0PiNp","Fwd_CC1Pi","HAFwd_CC1Pi","Fwd_CCOther","CCPhoton"};
-    const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>6"    ,    "[5]>6"    ,   "[6]>8"     ,   "[7]>8"     ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
-	const int * topology_branch[12]={       0     ,      0      ,      0      ,      0      ,      0        ,      0        ,      0        ,      0        ,      1    ,      1      ,       2     ,    13    };
-    const char * categories[2] = {"distribution", "effpurity"};
-	
-	TCanvas* canvas = new TCanvas("canvas", "canvas", 750*n_wide*win_scale, 500*n_high*win_scale);
-	canvas->Print("Plots.pdf[");
-	
-	plotMomCos(exp, p6, accum_levels, sample_names, categories, topology_branch);
-	
-	canvas->Print("Plots.pdf]");
-}
-
-void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], const char * sample_names[], const char * categories[], const int * topology_branch[]) {
-	
-	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root");
+	DrawingTools* draw = new DrawingTools("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run4.root");
 	const char * variables[2] = {"mom","costheta"};
 	const char * FGDs[1] = {"FGD1"};
 	
@@ -59,6 +15,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 	
 	if(j==0){ //Distributions
 	if(i==0){ //Momentum
+	
 		draw->SetLegendPos("tr");
 		draw->SetTitleX("Reconstructed p_{#mu}");
 		draw->SetTitleY("Events");
@@ -66,7 +23,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
 		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
-		
+
 		}
 	if(i==1){ //cos(theta)
 		if(k==2||k==3||k==6||k==7){draw->SetLegendPos("tr");}
@@ -80,6 +37,7 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		}
 		draw->ChangeLegendEntry(0, "P6AA","");
 		
+		TH1D* histo1 = NULL;
 		histo1 = (TH1D*)draw->GetLastHisto();
 		cout << Form("%s_%s_%s_%s Integral: ",FGDs[f-1],sample_names[k],variables[i],categories[j]) << histo1->Integral();
 		/*
@@ -111,6 +69,9 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 	exp.SetCurrentTree("truth"); //Sets the tree for true values to be used
 	p6.SetCurrentTree("truth");
 	if(i==0){ //Momentum
+		//TLegend* legend = NULL;
+		auto legend = new TLegend(0.6,0.7,0.9,0.9);
+		TGraphAsymmErrors* graph1 = NULL;
 		if(k>7){auto legend = new TLegend(0.6,0.7,0.9,0.9);}
 		else {auto legend = new TLegend(0.6,0.2,0.9,0.4);}
 		draw->SetTitleY("Efficiency & Purity");
@@ -163,6 +124,55 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 			}
 		}
 	}
+}
+
+void fourpi_plots() {
+	
+    gROOT->SetBatch(); //Stops it from spamming windows when drawing
+	DrawingTools* draw = new DrawingTools("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run4.root"); //Initialises DrawingTools with a random .root file
+	//draw->SetStackFillStyle(3254);
+
+	// Create an experiment with name "nd280"
+    Experiment exp("nd280");
+
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run4.root");
+	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+    SampleGroup p_7("p_7");
+    p_7.AddMCSample("magnet", prod_7);
+	//exp.AddSampleGroup("p_7", p_7);
+	
+	//DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_HL3.11_FHC.root");
+	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water.root");
+    p_7.AddDataSample(prod_6);
+    exp.AddSampleGroup("p_7", p_7); 
+	
+	//Create a seperate experiment for eff&pur for P6
+	Experiment p6("nd280_p6");
+  
+	//DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_HL3.11_FHC.root");
+	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water.root");
+	SampleGroup run4a_p6("run4a_p6");
+	run4a_p6.AddMCSample("magnet", P6_4a);
+	p6.AddSampleGroup("run4a_p6", run4a_p6);
+
+
+    const char * sample_names[12] = {"Fwd_CC0Pi0p","Fwd_CC0PiNp","Bwd_CC0Pi0p","Bwd_CC0PiNp","HAFwd_CC0Pi0p","HAFwd_CC0PiNp","HABwd_CC0Pi0p","HABwd_CC0PiNp","Fwd_CC1Pi","HAFwd_CC1Pi","Fwd_CCOther","CCPhoton"};
+    const char * accum_levels[12] = {   "[0]>8"   ,   "[1]>8"   ,   "[2]>8"   ,   "[3]>8"   ,    "[4]>6"    ,    "[5]>6"    ,   "[6]>8"     ,   "[7]>8"     ,  "[8]>7"  ,   "[9]>7"   ,   "[10]>7"  , "[11]>6" };
+	const int topology_branch[12]={       0     ,      0      ,      0      ,      0      ,      0        ,      0        ,      0        ,      0        ,      1    ,      1      ,       2     ,    13    };
+    const char * categories[2] = {"distribution", "effpurity"};
+	
+	float win_scale = 0.75;
+    int n_wide(2);
+    int n_high(2);
+	
+	TCanvas* canvas = new TCanvas("canvas", "canvas", 750*n_wide*win_scale, 500*n_high*win_scale);
+	canvas->Print("Plots.pdf[");
+	
+	plotMomCos(exp, p6, accum_levels, sample_names, categories, topology_branch, canvas);
+	
+	canvas->Print("Plots.pdf]");
 	
 }
+
+
 

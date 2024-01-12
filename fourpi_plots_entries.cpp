@@ -3,7 +3,7 @@
 
 void fourpi_plots_entries() {
 	
-    //gROOT->SetBatch(); //Stops it from spamming windows when drawing
+    gROOT->SetBatch(); //Stops it from spamming windows when drawing
 	DrawingTools* draw = new DrawingTools("/home/t2k/aspeers/PROD7_validation/testing/MultiPiAnalysis_TEST.root"); //Initialises DrawingTools with a random .root file
 	//draw->SetStackFillStyle(3254);
 
@@ -16,14 +16,14 @@ void fourpi_plots_entries() {
     p_7.AddMCSample("magnet", prod_7);
 	exp.AddSampleGroup("p_7", p_7);
 	
-	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings_OFFICIAL.root");
     p_7.AddDataSample(prod_6);
     exp.AddSampleGroup("p_7", p_7); 
 	
 	//Create a seperate experiment for eff&pur for P6
 	Experiment p6("nd280_p6");
   
-	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
+	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings_OFFICIAL.root");
 	SampleGroup run4a_p6("run4a_p6");
 	run4a_p6.AddMCSample("magnet", P6_4a);
 	p6.AddSampleGroup("run4a_p6", run4a_p6);

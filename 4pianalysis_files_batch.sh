@@ -1,9 +1,9 @@
 # Prepare JDL file
 JDL_FILE="CC4Pi.jdl" #Name of produced .jdl file
 EXECUTABLE="/home/t2k/aspeers/4pi_selection/exec_4pianalysis_files_batch.sh"
-DATA_DIRECTORY="/data/aspeers/Official_Flat_Trees/P7_V12_V13/P7_V12_FHC_OFFICIAL_run4air_MC_HL2.90.1"
+DATA_DIRECTORY="/data/t2k/production007/E/mcp/neut_5.6.4.1_p7c1/2015-08-water/magnet/run8/anal"
 #DATA_DIRECTORY="/data/aspeers/4pi_Selection/mcp/P6AA/P6AA_FHC_flattrees_OFFICIAL"
-OUTFILE_DIR="/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_FHC_HL3.11_FHC"
+OUTFILE_DIR="/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water"
 
 # Write JDL file header
 #notification=Never #Lots of jobs => lots of emails. Keep it like this for less spam
