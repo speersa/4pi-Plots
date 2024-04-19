@@ -22,7 +22,10 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 		//draw->SetTitle("TEST");
 		draw->SetTitle(Form("%s_%s_%s_%s",FGDs[f-1],sample_names[k],variables[i],categories[j]));
 		
-		draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");
+		if(k==4||k==5||k==6||k==7){
+			draw->Draw(exp,"all","magnet","selmu_mom_range_oarecon",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");}
+			
+			else {draw->Draw(exp,"all","magnet","selmu_mom",50,0,5000,"topology_ccphoton",Form("accum_level[0]%s",accum_levels[k]),"","OVER NOAUTOLABELS");}
 
 		}
 	if(i==1){ //cos(theta)
@@ -129,28 +132,28 @@ void plotMomCos(Experiment exp, Experiment p6, const char * accum_levels[], cons
 void fourpi_plots() {
 	
     gROOT->SetBatch(); //Stops it from spamming windows when drawing
-	DrawingTools* draw = new DrawingTools("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run4.root"); //Initialises DrawingTools with a random .root file
+	DrawingTools* draw = new DrawingTools("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_HL3.11_FHC_run4_air.root"); //Initialises DrawingTools with a random .root file
 	//draw->SetStackFillStyle(3254);
 
 	// Create an experiment with name "nd280"
     Experiment exp("nd280");
 
-	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run4.root");
+	DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7_V12_HL3.11_FHC_run4_air.root");
 	//DataSample* prod_7 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_FGD1_default_settings.root");
     SampleGroup p_7("p_7");
     p_7.AddMCSample("magnet", prod_7);
 	//exp.AddSampleGroup("p_7", p_7);
 	
-	//DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_HL3.11_FHC.root");
-	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water.root");
+	DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_HL3.11_FHC.root");
+	//DataSample* prod_6 = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water.root");
     p_7.AddDataSample(prod_6);
     exp.AddSampleGroup("p_7", p_7); 
 	
 	//Create a seperate experiment for eff&pur for P6
 	Experiment p6("nd280_p6");
   
-	//DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_HL3.11_FHC.root");
-	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water.root");
+	DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P6AA_FHC_HL3.11_FHC.root");
+	//DataSample* P6_4a = new DataSample("/data/aspeers/4pi_Selection/mcp/microTrees/P7E_FHC_run8_water.root");
 	SampleGroup run4a_p6("run4a_p6");
 	run4a_p6.AddMCSample("magnet", P6_4a);
 	p6.AddSampleGroup("run4a_p6", run4a_p6);
